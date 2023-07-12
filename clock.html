@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        * {
+            font-family: 'Poppins', sans-serif;
+            text-transform: capitalize;
+        }
+        #box{
+            border: 2px solid black;
+            width: 50%;
+            margin: auto;
+            padding: 0;
+            position: relative;
+            top: 200px;
+            text-align: center;
+        }
+        #box-1 {
+            background-color:#B2B2B2;
+            color: black;
+            height: 350px;
+        }
+
+        #time {
+            border: 2px solid black;
+            font-size: 1.5rem;
+            padding: 15px;
+            position: relative;
+            top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" id="box">
+        <div class="" id="box-1">
+            <h1 class="display">Current time is : </h1>
+            <br>
+            <span id="time"></span>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class="lead">This is a simple clock which updates every second</p>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        let a;
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        setInterval(() => {
+            a = new Date();
+            let date = a.toLocaleDateString(options);
+            let time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+            document.getElementById('time').innerHTML = time + ' on ' + date;
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
